@@ -1,0 +1,14 @@
+{% extends '::base_header.html.twig' %}
+
+{%block extra%}
+    <div class="row">
+        <img src="/{{ entity.uploadDir }}/{{ entity.headerImage }}" class="event-header-image img-responsive" style="width:100%;"/>
+
+        <h1 title="{{"Title"|trans}}">{{entity.title}} <small title="{{"Short title"|trans}}">{{entity.shortTitle}}  </small></h1>
+        <span class="hidden" id="eventId">Event id #{{ entity.id }}</span>
+
+        <p title="{{"Headline"|trans}}">
+            <span>{{ entity.headline }}</span>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+Login: Login
+Logout: Logout
+Signout: Signout
+Profile: Profile
+About: About
+Change Password: Change Password
+Home: Home
+Sign up now: Sign up now
+error.oops: Oops there is an error
+Back to homepage: Back to homepage
+Back to the list: Back to the list
+Access Denied : Access Denied 
+Admin Dashboard: Admin Dashboard
+User Dashboard: User Dashboard
+Pages: Pages
+Page: Page
+Page List: Page List
+Create Page: Create Page
+Users: Users
+User: User
+User Management: User Management
+Total Users: Toplam Kullanıcı
+User List: User List
+Create User: Create User
+Create: Create
+Edit: Edit
+Delete: Delete
+Save: Save
+Actions: Actions
+Print: Print
+Name: Name
+Inventory: Iventory
+Inventory Records: Inventory Records
+Create Inventory Record: Create Inventory Record
+Serial code: Serial code
+Vendor: Vendor
+Vendors: Vendors
+Vendor List: Vendor List
+Is Available?: Is Available?
+Description: Description
+Barcode: Barcode
+Transfer Points: Transfer Points
+Venues: Venues
+Hotels: Hotels
+Start Date: Start Date
+End Date: End Date
+Date: Date
+Reservation Deadline: Reservation Deadline
+Contact Records: Contact Records
+Contact Title: Contact Title
+Email: Email
+URL Path: URL Path
+URL Path help: This path will be used while generating urls for this event. Do not use whitespaces or special characters. This path must be unique above other events' paths.
+Title:  Title
+Short title: Short title
+Headline: Headline
+Register: Register
+Important Dates: Important Dates
+Event Dates: Event Dates
+Important Notes: Important Notes
+Details: Details
+Cancellation Policy: Cancellation Policy
+Payment Terms: Payment Terms
+Events: Events
+Vendor Records: Vendor Records
+Icon: Icon
+Event: Event
+New Event: New Event
+New Timeline Record: New Timeline Record
+Timeline: Timeline
+Timeline Records: Timeline Records
+timeline.for.event: Timeline for <a href="%link%">%title%</a>
+please.enter.personal.data: Please enter <b>your</b> personal data to the form below
+About EventOne: About EventOne
+about.long: EventOne is a bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 

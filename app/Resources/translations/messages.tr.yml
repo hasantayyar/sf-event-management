@@ -1,0 +1,75 @@
+Login: Giriş
+Logout: Çıkış
+Signout: Çıkış
+Profile: Profil
+About: Hakkında
+Change Password: Şifre Değiştir 
+Home: Ana Sayfa
+Sign up now: Şimdi üye ol
+error.oops: Oops küçük bir hata oluştu
+Back to homepage: Ana sayfaya geri dön
+Back to the list: Listeye geri dön
+Access Denied : Yetkiniz yetersiz
+Admin Dashboard: Yönetici Paneli
+User Dashboard: Kullanıcı Paneli
+Pages: Sayfalar
+Page: Sayfa
+Page List: Sayfa Listesi
+Create Page: Sayfa Oluştur
+Users: Kullanıcılar
+User: Kullanıcı
+User Management: Kullanıcı Yönetimi
+Total Users: Toplam Kullanıcı
+User List: Kullanıcı Listesi
+Create User: Kullanıcı Oluştur
+Create: Oluştur
+Edit: Düzenle
+Delete: Sil
+Save: Kaydet
+Actions: İşlemler
+Print: Yazdır
+Name: İsim
+Inventory: Stok
+Inventory Records: Stok Kayıtları
+Create Inventory Record: Stok Kaydı Oluştur
+Serial code: Seri kodu
+Vendor: Marka
+Vendors: Markalar
+Vendor List: Marka Listesi
+Is Available?: Uygun mu?
+Description: Açıklama
+Barcode: Barkod
+Transfer Points: Transfer Noktaları
+Venues: Mekanlar
+Hotels: Oteller
+Start Date: Başlangıç Tarihi
+End Date: Bitiş Tarihi
+Date: Tarih
+Reservation Deadline: Rezervasyon Son Tarihi
+Contact Records: İletişim 
+Contact Title: Ünvan
+Email: E-posta
+URL Path: Web adresi yolu
+URL Path help: Bu değer, etkinlik ile ilgili web adresleri oluşturulurken kullanılacaktır. Boşluk veya özel karakter/Türkçe karakter kullanmayınız
+Title:  Başlık
+Short title: Kısa başlık
+Headline: Üst bilgi
+Register: Kayıt ol
+Important Dates: Önemli Tarihler
+Event Dates: Etkinlik Tarihleri
+Important Notes: Önemli Notlar
+Details: Detaylar
+Cancellation Policy: İptal Politikası
+Payment Terms: Ödeme koşulları
+Events: Etkinlikler
+Vendor Records: Marka Kayıtları
+Icon: Sembol
+Event: Etkinlik
+New Event: Yeni Etkinlik
+New Timeline Record: Yeni Zaman Çizelgesi Kaydı
+Timeline: Zaman Çizelgesi
+Timeline Records: Zaman Çizelgesi Kayıtları
+timeline.for.event:  <a href="%link%">%title%</a> için Zaman Çizelgesi
+please.enter.personal.data: Lütfen <b>kendi</b> kişisel bilgilerinizi aşağıdaki forma giriniz
+About EventOne: EventOne Hakkında
+about.long: EventOne bir çeşit bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 

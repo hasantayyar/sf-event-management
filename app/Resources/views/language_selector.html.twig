@@ -1,0 +1,13 @@
+<a href="#" class="dropdown-toggle" type="button"
+   id="languageDropDown" data-toggle="dropdown" aria-expanded="true">
+    <i class="fa fa-globe"></i> [{{ app.request.locale }}]
+    <span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu" aria-labelledby="languageDropDown">
+    {% for lang in global.languages%}
+        <li role="presentation"  class="{% if app.request.locale == lang.code %}disabled{%endif%}">
+            <a role="menuitem" tabindex="-1" 
+               href="{{ path('change_locale', { 'code': lang.code }) }}">
+                {{lang.name}} </a></li>  
+            {% endfor %}
+</ul>  

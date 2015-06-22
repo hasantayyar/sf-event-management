@@ -1,0 +1,45 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block content -%}
+    <h1>{{"Timeline Records"|trans}}</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>{{"Event"|trans}}</th>
+                <th>{{"Title"|trans}}</th>
+                <th>{{"Description"|trans}} </th>
+                <th>{{"Date"|trans}}</th>
+                <th>{{"Actions"|trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('timeline_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.event }} <a href="{{path("admin_event_show",{id:entity.eventId})}}"> #{{ entity.eventId}} </a> </td>
+                    <td>{{ entity.title }}</td>
+                    <td>{{ entity.description }}</td>
+                    <td>{% if entity.date %}{{ entity.date|date('Y-m-d') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('timeline_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('timeline_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a class="btn btn-success" href="{{ path('timeline_new') }}">
+        {{"Create"|trans}}
+    </a>
+
+{% endblock %}

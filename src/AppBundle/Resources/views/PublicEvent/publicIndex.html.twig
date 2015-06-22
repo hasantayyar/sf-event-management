@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="container">
+        {% include '::base_header_event.html.twig' with {active:-1}%}
+
+        <div class="row" style="text-align: center">
+            <a  class="btn btn-lg btn-success" href="{{path("event_register",{path:entity.getPath()})}}">
+                {% if entity.actionBtnText %}{{entity.actionBtnText|trans}}{%else%}{{"Register"|trans}}{%endif%} <i class="fa fa-check"></i> 
+            </a>
+            <br><br>
+        </div>
+
+        <div class="row"> 
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>{{"Important Dates"|trans}}</strong></div>
+                <div class="panel-body">
+
+                    <table class="record_properties table table-responsive">
+                        <tbody> 
+                            <tr>
+                                <th>{{"Event Dates"|trans}}</th>
+                                <td>{{ entity.startDate|date('Y-m-d') }} - {{ entity.endDate|date('Y-m-d') }}</td>
+                            </tr> 
+                            <tr>
+                                <th>{{"Reservation Deadline"|trans}}</th>
+                                <td>{{ entity.reservationDeadline|date('Y-m-d') }}</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div> 
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>{{"Important Notes"|trans}}</strong></div>
+                <div class="panel-body">
+                    <h4>{{"Details"|trans}} </h4>
+                    {{ entity.description }} 
+
+                    <h4>{{"Cancellation Policy"|trans}}</h4>
+                    {{ entity.cancellationPolicy }}
+
+                    <h4>{{"Payment Terms"|trans}} </h4>
+                    {{ entity.paymentTerms }} 
+                </div>
+            </div>
+
+            <h3>{{"Event Timeline"|trans}}</h3>
+            {% if entity.timelineRecords %}
+                <ul class="timeline">
+                    {% for record in entity.timelineRecords %}
+                        <li {% if loop.index % 2 == 0%}class="timeline-inverted"{%endif%} >
+                            <div class="timeline-badge" style="background-color: #204d74"><i class="fa fa-{{record.icon}}"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">{{record.title}}</h4>
+                                    <p><small class="text-muted"><i class="fa fa-time"></i> {{record.date|date('Y-m-d H:i:s')}}</small></p>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>{{record.description}}</p>
+                                </div>
+                            </div>
+                        </li> 
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="footer">{{ entity.footerText }}</div>
+    </div>
+
+{% endblock %}

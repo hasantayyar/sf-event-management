@@ -1,0 +1,17 @@
+assetic:
+    assets:
+        app_css:
+            inputs:
+                - '@AppBundle/Resources/public/css/app.css'
+                - %kernel.root_dir%/../web/vendor/bootstrap/dist/css/bootstrap.min.css
+                - %kernel.root_dir%/../web/vendor/bootstrap-dialog/dist/css/bootstrap-dialog.min.css
+                - %kernel.root_dir%/../web/vendor/font-awesome/css/font-awesome.min.css
+                - %kernel.root_dir%/../web/bundles/scdatetimepicker/css/datetimepicker.css
+        app_js:
+            inputs: 
+                - %kernel.root_dir%/../web/vendor/jquery/dist/jquery.min.js
+                - '@AppBundle/Resources/public/js/app.js'
+                - %kernel.root_dir%/../web/vendor/bootstrap/dist/js/bootstrap.min.js
+                - %kernel.root_dir%/../web/bundles/scdatetimepicker/js/bootstrap-datetimepicker.min.js
+                - %kernel.root_dir%/../web/bundles/scdatetimepicker/js/locales/bootstrap-datetimepicker.tr.js
+                - %kernel.root_dir%/../web/vendor/jquery.inputmask/dist/jquery.inputmask.bundle.min.js

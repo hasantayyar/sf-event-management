@@ -1,0 +1,41 @@
+{% extends '::base_admin.html.twig' %}
+{%block stylesheets %}
+    {{parent()}}
+    <link rel="stylesheet" type="text/css" href="/bundles/app/thirdparty/lat-lon-picker/css/jquery-gmaps-latlon-picker.css"/>
+{% endblock%}
+{% block content -%}
+    <h1>TransferPoint creation</h1>
+
+    {{ form(form) }}
+
+    <fieldset class="gllpLatlonPicker">
+        <input type="text" class="gllpSearchField">
+        <input type="button" class="gllpSearchButton" value="search">
+        <div class="gllpMap">Google Maps</div>
+        <input type="text" class="gllpLatitude" value="39.0959629363055"/>
+        <input type="text" class="gllpLongitude" value="33.662109375"/>
+        <input type="hidden" class="gllpZoom" value="3"/>
+    </fieldset>
+    <a href="{{ path('admin_transfer_points') }}">
+        Back to the list
+    </a> 
+{% endblock %}
+
+{% block javascripts %}
+    {{parent()}}
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="/bundles/app/thirdparty/lat-lon-picker/js/jquery-gmaps-latlon-picker.js"></script>
+    <script>
+        $(function () {
+            $id = $(".gllpLatlonPicker").attr("id");
+            $("fieldset").on("change", " .gllpLongitude", function () {
+                $("#appbundle_transferpoint_longitude").attr('value', $(this).val());
+            });
+
+            $("fieldset").on("change", ".gllpLatitude", function () {
+                $("#appbundle_transferpoint_latitude").attr('value', $(this).val());
+            });
+        });
+    </script>
+
+{% endblock %}

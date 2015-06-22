@@ -1,0 +1,58 @@
+<div class="header clearfix">
+    <nav>
+        <ul class="nav nav-pills pull-right">
+            <li role="presentation" {% if active ==1 %} class="active" {% endif %}>
+                <a href="/">
+                    {{"Home"|trans}}
+                </a>
+            </li>
+            <li role="presentation" {% if active ==2 %} class="active" {% endif %}>
+                <a href="/about">
+                    {{"About"|trans}}
+                </a>
+            </li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li role="presentation" {% if active ==3 %} class="active" {% endif %}>
+                    <a href="#" class="dropdown-toggle" type="button"
+                       id="profileDropDown" data-toggle="dropdown" aria-expanded="true">
+                        {{app.user.username}}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="profileDropDown">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" 
+                                                   href="{{ path('fos_user_profile_show') }}">
+                                {{"Profile"|trans}} </a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                   href="{{ path('fos_user_change_password') }}">
+                                {{"Change Password"|trans}}</a></li> 
+                        <li role="presentation">
+                            {% if is_granted('ROLE_SUPER_ADMIN')%}
+                                <a href="{{path('admin_index')}}">{{"Admin Dashboard"|trans}}</a>
+                            {%else %}
+                                <a href="{*path('user_index')*}">{{"User Dashboard"|trans}}</a>
+                            {%endif%}
+                        </li> 
+                        <li class="divider"></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" 
+                                                   href="{{ path('fos_user_security_logout') }}">
+                                <i class="fa fa-sign-out"></i> {{ 'Logout'|trans }}  </a></li>
+
+                    </ul> 
+                </li>
+            {% else %}
+                <li role="presentation" {% if active ==3 %} class="active" {% endif %}>
+                    <a href="{{ path('fos_user_security_login') }}">
+                        <i class="fa fa-sign-in"></i> {{ 'Login'|trans }}
+                    </a> 
+                </li>
+            {% endif %} 
+
+            <li role="presentation">
+                {% include '::language_selector.html.twig' %}
+            </li>
+        </ul>
+    </nav>
+    <a href="/"><h3 class="text-muted">EventOne</h3></a>
+</div>
+{%block extra %}
+{%endblock%}

@@ -1,0 +1,51 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block content -%}
+    <h1>Venue</h1>
+
+    <table class="record_properties table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>{{"Name"|trans}}</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>{{"Country"|trans}}</th>
+                <td>{{ entity.country }}</td>
+            </tr>
+            <tr>
+                <th>{{"City"|trans}}</th>
+                <td>{{ entity.city }}</td>
+            </tr>
+            <tr>
+                <th>{{"Capacity"|trans}}</th>
+                <td>{{ entity.capacity }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h2>{{"Halls"|trans}}</h2>
+    {% for hall in entity.halls %}
+        {{hall.name}} - {{hall.capacity}}
+    {% endfor %}
+    <br>
+    <a class="btn btn-default" href="{{path('admin_venue_add_hall',{id:entity.id} )}}">
+        <i class="fa fa-plus-circle"></i> {{"Add Hall"|trans}}
+    </a>
+    <hr>
+
+
+    <a class="btn btn-default" href="{{ path('admin_venue') }}">
+        {{"Back to the list"|trans}}
+    </a>
+    <a class="btn btn-default" href="{{ path('admin_venue_edit', { 'id': entity.id }) }}">
+        {{"Edit"|trans}}
+    </a>
+    <hr>
+    {{ form(delete_form) }} 
+{% endblock %}

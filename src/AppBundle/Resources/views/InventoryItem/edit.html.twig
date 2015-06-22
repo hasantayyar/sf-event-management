@@ -1,0 +1,16 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block content -%}
+    <h1>InventoryItem edit</h1>
+
+    {{ form(edit_form) }}
+
+    <hr>
+    <a class="btn btn-default" href="{{ path('admin_inventory_item') }}">
+        {{"Back to the list"|trans}}
+    </a>
+
+    <hr>
+    {{ form(delete_form) }}
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block content -%}
+    <h1>Event list</h1>
+
+    <table class="records_list table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>{{"Title"|trans}}</th>
+                <th>{{"Short title"|trans}}</th> 
+                <th>{{"Start date"|trans}}</th>  
+                <th>{{"End date"|trans}}</th>
+                <th>{{"Reservation deadline"|trans}}</th> 
+                <th>{{"Actions"|trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('admin_event_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>
+                        <a href="{{ path('public_event', { 'path' : entity.getPath() }) }}" target="_blank">
+                            <i class="fa fa-external-link"></i> {{ entity.title }}
+                        </a>
+                    </td>
+                    <td>{{ entity.shortTitle }}</td>
+                    <td>{% if entity.startDate %}{{ entity.startDate|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if entity.endDate %}{{ entity.endDate|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if entity.reservationDeadline %}{{ entity.reservationDeadline|date('Y-m-d') }}{% endif %}</td>
+                    <td>
+                        <div class="btn-group"> 
+                            <a class="btn btn-xs btn-link" href="{{ path('admin_event_show', { 'id': entity.id }) }}">show</a>
+                            <a class="btn btn-xs btn-link" href="{{ path('admin_event_edit', { 'id': entity.id }) }}">edit</a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-info" href="{{ path('admin_event_new') }}">
+        {{"Create"|trans}}
+    </a>
+
+{% endblock %}

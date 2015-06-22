@@ -1,0 +1,41 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block stylesheets %}
+    {{parent()}}
+    {% stylesheets '@AppBundle/Resources/public/css/login.css' filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% trans_default_domain 'security' %}
+
+{% block fos_user_content %}
+
+    <div class="container">
+        {% include '::base_header.html.twig' with {'active':3} %}
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <form class="form-signin"  action="{{ path("fos_user_security_check") }}" method="post">
+            <h2 class="form-signin-heading">{{"Please sign in"|trans}}</h2>
+            <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+            <input type="text" id="username" name="_username" 
+                   class="form-control" placeholder="{{ 'security.login.username'|trans }}" required autofocus>
+            <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+            <input type="password" id="password" name="_password" 
+                   class="form-control" placeholder="{{ 'security.login.password'|trans }}" required>
+            <div class="checkbox">
+                <label for="remember_me">
+                    <input class="form-control-static" type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    {{ 'security.login.remember_me'|trans }}
+                </label>
+            </div> 
+            <button class="btn btn-lg btn-primary btn-block" 
+                    name="_submit" value="{{ 'security.login.submit'|trans }}" type="submit">
+                Sign in
+            </button>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        </form>
+    </div> <!-- /container --> 
+
+{% endblock fos_user_content %}

@@ -1,0 +1,12 @@
+{% extends '::base_admin.html.twig' %}
+
+{% block content -%}
+    <h1>{{"New Timeline Record"|trans}}</h1>
+
+    {{ form(form) }}
+
+    <a class="btn btn-default" href="{{ path('timeline') }}">
+        {{"Back to the list"|trans}}
+    </a>
+
+{% endblock %}

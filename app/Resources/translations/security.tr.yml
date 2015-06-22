@@ -1,0 +1,6 @@
+security.login.username: Kullanıcı adı
+security.login.password: Şifre
+security.login.remember_me: Beni hatırla
+security.login.submit: Gönder
+Please sign in: Giriş yapınız
+Invalid credentials.: Hatalı kullanıcı adı veya şifre.

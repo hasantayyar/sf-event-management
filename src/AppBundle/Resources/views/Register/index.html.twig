@@ -1,0 +1,117 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="container">
+        {% include '::base_header_event.html.twig' with {active:-1}%}
+
+
+        <div class="row">
+            <div class="panel panel-default panel-steps">
+                <div class="panel-heading">
+                    <ul class="nav nav-wizard submission-progress" id="article-submission-steps"> 
+                        <li id="submission-progress-step1 first-step" rel="#1"><span class="badge">1</span> Personal Information</a></li>
+                        <li id="submission-progress-step2" rel="#2"><span class="badge">2</span> Hotel</a></li>
+                        <li id="submission-progress-step3" rel="#3"><span class="badge">3</span> Transfer</a></li>
+                        <li id="submission-progress-step4" rel="#4"><span class="badge">4</span>  Events</a></li>
+                        <li id="submission-progress-step5 last-step"  rel="#"><span class="badge">6</span> Preview &amp; Payment</a></li> 
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>{{"please.enter.personal.data"|trans|raw}}</legend> 
+
+                        <form action="" class="form-horizontal">
+
+                            <div class="form-group">
+                                <label for="inputTitle" class="col-sm-2 control-label">{{"Contact Title"|trans}}</label>
+                                <div class="col-sm-10">
+                                    <select>
+                                        {% for title in contactTitles %}
+
+                                        {% endfor%}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputName" class="col-sm-2 control-label">{{"Name"|trans}}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="capitalize form-control" id="inputName" placeholder="{{"Name"|trans}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputMiddleName" class="col-sm-2 control-label">{{"Middle Name"|trans}}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="capitalize form-control" id="inputMiddleName" placeholder="{{"Middle Name"|trans}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputLastName" class="col-sm-2 control-label">{{"Last Name"|trans}}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="capitalize form-control" id="inputLastName" placeholder="{{"Last Name"|trans}}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Accept
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                </div>
+                            </div> 
+
+
+                        </form> 
+
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>{{"Important Dates"|trans}}</strong></div>
+                <div class="panel-body">
+
+                    <table class="record_properties table table-responsive">
+                        <tbody> 
+                            <tr>
+                                <th>{{"Event Dates"|trans}}</th>
+                                <td>{{ entity.startDate|date('Y-m-d') }} - {{ entity.endDate|date('Y-m-d') }}</td>
+                            </tr> 
+                            <tr>
+                                <th>{{"Reservation Deadline"|trans}}</th>
+                                <td>{{ entity.reservationDeadline|date('Y-m-d') }}</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div> 
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>{{"Important Notes"|trans}}</strong></div>
+                <div class="panel-body">
+                    <h4>{{"Details"|trans}} </h4>
+                    {{ entity.description }} 
+
+                    <h4>{{"Cancellation Policy"|trans}}</h4>
+                    {{ entity.cancellationPolicy }}
+
+                    <h4>{{"Payment Terms"|trans}} </h4>
+                    {{ entity.paymentTerms }} 
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">{{ entity.footerText }}</div>
+    </div>
+
+{% endblock %}
